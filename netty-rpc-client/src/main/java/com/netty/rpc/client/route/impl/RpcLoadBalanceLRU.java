@@ -14,7 +14,7 @@ import java.util.concurrent.ConcurrentMap;
  */
 public class RpcLoadBalanceLRU extends RpcLoadBalance {
     private ConcurrentMap<String, LinkedHashMap<RpcProtocol, RpcProtocol>> jobLRUMap =
-            new ConcurrentHashMap<String, LinkedHashMap<RpcProtocol, RpcProtocol>>();
+            new ConcurrentHashMap<>();
     private long CACHE_VALID_TIME = 0;
 
     public RpcProtocol doRoute(String serviceKey, List<RpcProtocol> addressList) {

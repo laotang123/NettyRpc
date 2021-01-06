@@ -9,7 +9,7 @@ import com.app.test.service.HelloService;
 public class RpcTest {
 
     public static void main(String[] args) throws InterruptedException {
-        final RpcClient rpcClient = new RpcClient("10.217.59.164:2181");
+        final RpcClient rpcClient = new RpcClient("192.168.153.129:2181");
 
         int threadNum = 1;
         final int requestNum = 50;
@@ -31,7 +31,7 @@ public class RpcTest {
                                 System.out.println("result = " + result);
                             }
                             try {
-                                Thread.sleep(5 * 1000);
+                                Thread.sleep(2 * 1000);
                             } catch (InterruptedException e) {
                                 e.printStackTrace();
                             }

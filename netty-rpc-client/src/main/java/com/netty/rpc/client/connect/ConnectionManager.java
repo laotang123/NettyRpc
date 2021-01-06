@@ -163,6 +163,7 @@ public class ConnectionManager {
                 logger.error("Waiting for available service is interrupted!", e);
             }
         }
+        //FIXME: 一个serviceKey如何对应多个服务，List<RpcProtocol>
         RpcProtocol rpcProtocol = loadBalance.route(serviceKey, connectedServerNodes);
         RpcClientHandler handler = connectedServerNodes.get(rpcProtocol);
         if (handler != null) {
