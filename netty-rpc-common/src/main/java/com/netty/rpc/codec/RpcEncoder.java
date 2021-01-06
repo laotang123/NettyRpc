@@ -26,6 +26,7 @@ public class RpcEncoder extends MessageToByteEncoder {
     public void encode(ChannelHandlerContext ctx, Object in, ByteBuf out) throws Exception {
         if (genericClass.isInstance(in)) {
             try {
+                //将对象序列化，不同的序列化实现类
                 byte[] data = serializer.serialize(in);
                 out.writeInt(data.length);
                 out.writeBytes(data);
